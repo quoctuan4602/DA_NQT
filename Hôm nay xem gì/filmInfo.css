@@ -1,0 +1,14 @@
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  min-width: auto;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}

@@ -1,0 +1,200 @@
+@font-face {
+  font-family: robo;
+  src: url(./fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+  color: white;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+body {
+  background: black;
+}
+
+@font-face {
+  font-family: play;
+  src: url(./fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: mont;
+  src: url(./fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
+
+.logosite {
+  width: 40px;
+  margin-right: 5px;
+  display: flex;
+}
+
+.image_size {
+  width: 500px;
+  height: 650px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+  padding: 15px;
+  text-shadow: 0 0 15px yellow;
+  font-weight: 600;
+  gap: 50px;
+}
+
+.home,
+.about {
+  margin-right: 20px;
+}
+
+.home,
+.about,
+.contact {
+  font-size: 25px;
+  font-family: "Poppins";
+  color: white;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.streamixx {
+  font-size: 30px;
+  font-family: "Poppins";
+  color: white;
+  display: flex;
+  letter-spacing: 5px;
+}
+
+.moviecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.heading {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  text-shadow: 0 0 15px rgb(255, 3, 255);
+  font-family: "Roboto", sans-serif;
+}
+
+.genreselected {
+  display: flex;
+  color: white;
+  text-shadow: 0 0 15px yellow;
+  font-size: 150px;
+  text-align: center;
+  border: 2px solid white;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 55px;
+  }
+
+  .top {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .navbar {
+    margin-top: 20px;
+    justify-content: center;
+    gap: 0px;
+  }
+
+  .home,
+  .about {
+    margin-bottom: 20px;
+    margin-right: 40px;
+  }
+
+  .home,
+  .about,
+  .contact {
+    margin-left: -10px;
+  }
+
+  .streamixx {
+    justify-content: center;
+  }
+
+  .genreselected {
+    font-size: 60px;
+  }
+
+  .moviecontainer {
+    margin-top: 10px;
+  }
+}
+.bordered-paragraph {
+  border: 20px solid black; /* Change 'black' to your desired color */
+  padding-left: 10px; /* Optional: Add some padding inside the border */
+  font-family: Arial, sans-serif;
+}
+.filmname {
+  font-size: 30px;
+  border-left: 20px solid black;
+  padding: 10px;
+}
+.bordered-class {
+  border-left: 20px solid black;
+  padding-left: 10px;
+}
+/* Dropdown button styling */
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Initially hide the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+  z-index: 1;
+}
+
+/* Show the menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown item styling */
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}

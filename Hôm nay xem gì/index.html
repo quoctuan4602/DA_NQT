@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hôm nay xem gì</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./Data/logo/LogoHNXG.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/d1c2ea8b80.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <script defer src="./Data/videoscript/script.js"></script>
+    <script defer src="./Data/videoscript/index.js"></script>
+    <script defer src="./Data/videoscript/notification.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body style="background-color: black; color: white">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <a href="index.html#" class="logosite">
+          <img src="./Data/logo/LogoHNXG.png" alt="sitelogo" class="logosite" />
+          <div class="streamixx">HNXG</div>
+        </a>
+      </div>
+      <div class="navbar">
+        <div class="home"><a href="index.html#">Trang chủ</a></div>
+        <div class="about"><a href="aboutus.html">Về chúng tôi</a></div>
+        <div class="contact">
+          <a href="index.html#contactus">Liên hệ</a>
+        </div>
+      </div>
+
+      <div class="d-flex gap-5">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-count" id="notification-count">3</span>
+          </button>
+          <ul
+            class="dropdown-menu"
+            aria-labelledby="dropdownMenuButton1"
+            id="notification"
+          ></ul>
+        </div>
+        <div id="usermenu"></div>
+      </div>
+    </div>
+
+    <div class="welcomepage">
+      <div class="welcome">Chào mừng đến HNXG</div>
+      <div class="allimage">
+        <div class="image1"></div>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image4"></div>
+      </div>
+    </div>
+
+    <div class="welcomemessage">
+      Chưa biết xem gì hôm nay? Để chúng tôi giúp bạn
+    </div>
+    <div class="cont">
+      <div class="buttons" id="dropdown">
+        <button id="rdnpickx" type="button">
+          <span>Chọn một bộ phim</span>
+        </button>
+        <div id="dropdown-content">
+          <a href="randompick.html" target="_blank"
+            ><button class="umm" id="rdnpick" type="button">
+              <span>Phim bất kỳ</span>
+            </button></a
+          >
+          <a href="filmList.html" target="_blank"
+            ><button class="umm" id="rdnpick" type="button">
+              <span>Tìm kiếm</span>
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <br /><br /><br />
+
+    <!-- ===================================================================== -->
+    <h2
+      style="margin-bottom: 40px; margin-left: 20px; padding: 10px"
+      class="glow"
+    >
+      Phim mới
+    </h2>
+    <div
+      id="carouselExampleCaptions"
+      class="carousel carousel-dark slide"
+      data-bs-ride="false"
+      style="margin-bottom: 100px"
+    >
+      <div
+        class="carousel-indicators"
+        style="background-color: rgba(255, 255, 255, 0.54)"
+      >
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+          s
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div id="carousel-inner" class="carousel-inner"></div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <main class="main1 mb-5">
+      <div class="imdbtop">
+        <h1>Phim hot</h1>
+      </div>
+      <div class="d-flex mb-5 justify-content-between" id="filmHot"></div>
+    </main>
+
+    <!-- =============================================================================== -->
+
+    <div class="genres">
+      <div class="action-genre reveal fade-left">
+        <video id="my-video1" src="./Data/genvid/vid1.mp4" muted loop></video>
+        <div class="genre-content">
+          <h1>HÀNH ĐỘNG</h1>
+          <p>
+            Một thể loại có các pha nguy hiểm về thể chất, năng lượng cao và
+            nhịp độ nhanh trình tự. Những bộ phim này thường có cảnh một anh
+            hùng hoặc nhân vật chính chiến đấu chống lại kẻ phản diện hoặc kẻ
+            phản diện, và có thể bao gồm các yếu tố phiêu lưu, gián điệp hoặc võ
+            thuật. Phim hành động có thể được đánh giá cao mang tính giải trí và
+            hồi hộp, tập trung vào hoạt động kích thích adrenaline sự phấn khích
+            và cảnh tượng.
+          </p>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="action-genre1 reveal fade-right">
+        <div class="genre-content">
+          <h1>HÀI KỊCH</h1>
+          <p>
+            Thể loại nhằm mục đích giải trí và gây cười thông qua sự hài hước
+            những tình huống, lời thoại dí dỏm và những màn trình diễn hài hước.
+            Phim hài có thể từ hài hước và hài hước đến châm biếm và hài hước
+            đen tối, cung cấp một lối thoát nhẹ nhàng và thường mang lại sự giao
+            tiếp xã hội bình luận.
+          </p>
+        </div>
+        <video id="my-video2" src="./Data/genvid/ComGEN.mp4" muted loop></video>
+      </div>
+
+      <br /><br />
+
+      <div class="action-genre reveal fade-left">
+        <video id="my-video3" src="./Data/genvid/DraGEN.mp4" muted loop></video>
+        <div class="genre-content">
+          <h1>KỊCH TÍNH</h1>
+          <p>
+            Một thể loại khám phá cảm xúc và mối quan hệ của con người, thường
+            có chủ đề mãnh liệt và nghiêm túc. Những bộ phim này có thể bao gồm
+            các yếu tố của bi kịch, lãng mạn và bình luận xã hội, và có thể bao
+            gồm từ có giai điệu từ thực tế đến khoa trương. Phim chính kịch có
+            thể có sức mạnh và cảm động, tập trung vào sự phát triển nhân vật và
+            chiều sâu cảm xúc.
+          </p>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="action-genre1 reveal fade-right">
+        <div class="genre-content">
+          <h1>KINH DỊ</h1>
+          <p>
+            Một thể loại có các pha nguy hiểm về thể chất, năng lượng cao và
+            nhịp độ nhanh trình tự. Những bộ phim này thường có cảnh một anh
+            hùng hoặc nhân vật chính chiến đấu chống lại kẻ phản diện hoặc kẻ
+            phản diện, và có thể bao gồm các yếu tố phiêu lưu, gián điệp hoặc võ
+            thuật.
+          </p>
+        </div>
+        <video id="my-video4" src="./Data/genvid/HorGEN.mp4" muted loop></video>
+      </div>
+
+      <br /><br />
+
+      <div class="action-genre reveal fade-left">
+        <video id="my-video5" src="./Data/genvid/PsyGEN.mp4" muted loop></video>
+        <div class="genre-content">
+          <h1>TỘI PHẠM</h1>
+          Một thể loại xoay quanh các hoạt động tội phạm, điều tra và việc theo
+          đuổi công lý. Phim tội phạm thường khám phá các chủ đề về đạo đức,
+          tham nhũng và sự phức tạp của tâm lý con người. Họ có thể bao gồm các
+          yếu tố hồi hộp, hành động và ly kỳ, mang đến cảm giác gay cấn và gay
+          cấn mô tả chân thực về thế giới ngầm tội phạm, những vụ trộm, thám tử
+          và ranh giới mờ nhạt giữa luật pháp và trật tự. Những bộ phim này lôi
+          cuốn khán giả với những âm mưu phức tạp, những nhân vật phản anh hùng
+          lôi cuốn và một cái nhìn thoáng qua vào mặt tối của xã hội.
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="action-genre1 reveal fade-right">
+        <div class="genre-content">
+          <h1>TÌNH CẢM</h1>
+          Một thể loại tập trung vào các mối quan hệ lãng mạn và những cảm xúc
+          đi cùng họ, thường có chủ đề về tình yêu và sự đau lòng. Những cái này
+          phim có thể bao gồm từ những bộ phim hài nhẹ nhàng đến những bộ phim
+          truyền hình căng thẳng và có thể bao gồm các yếu tố âm nhạc, khiêu vũ
+          hoặc các hình thức biểu đạt khác. Phim lãng mạn có thể rất giàu cảm
+          xúc và lãng mạn, tập trung vào khám phá sự phức tạp của tình yêu và
+          các mối quan hệ.
+        </div>
+        <video id="my-video6" src="./Data/genvid/RomGEN.mp4" muted loop></video>
+      </div>
+
+      <br /><br />
+
+      <div class="action-genre reveal fade-left">
+        <video id="my-video7" src="./Data/genvid/SciGEN.mp4" muted loop></video>
+        <div class="genre-content">
+          <h1>VIỄN TƯỞNG</h1>
+          <p>
+            Một thể loại khám phá những tiến bộ khoa học và công nghệ, thường
+            lấy bối cảnh tương lai hoặc thế giới khác. Những bộ phim này có thể
+            bao gồm các yếu tố phiêu lưu, hành động hoặc kinh dị và thường khám
+            phá các chủ đề như trí tuệ nhân tạo, du hành thời gian và sự sống
+            ngoài trái đất. Phim khoa học viễn tưởng có thể giàu trí tưởng tượng
+            và có tầm nhìn xa trông rộng, tập trung vào việc khám phá những khả
+            năng của con người sự khéo léo và đổi mới.
+          </p>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="action-genre1 reveal fade-right">
+        <div class="genre-content">
+          <h1>GIẬT GÂN</h1>
+          <p>
+            Một thể loại thường khiến khán giả đứng ngồi không yên liên quan đến
+            những tình tiết hồi hộp và nguy hiểm. Những bộ phim này thường liên
+            quan đến một anh hùng hoặc nhân vật chính đang cố gắng đánh bại một
+            nhân vật phản diện hoặc nhân vật phản diện và có thể bao gồm các yếu
+            tố bí ẩn, gián điệp hoặc hoạt động. Phim kinh dị có thể rất hấp dẫn
+            và hấp dẫn, với tập trung vào sự căng thẳng và hồi hộp.
+          </p>
+        </div>
+        <video id="my-video8" src="./Data/genvid/ThrGEN.mp4" muted loop></video>
+      </div>
+    </div>
+    <br />
+    <br /><br /><br />
+
+    <div class="contactuspage" id="contactus">
+      <div class="contactname">Liên hệ</div>
+      <div class="contactuscontainer">
+        <form class="feedbackform">
+          <div class="name">
+            <div class="first-name">
+              <label for="fn" class="formitem">First Name</label>
+              <input
+                id="fn"
+                placeholder="First Name"
+                name="First-name"
+                class="inputbox"
+                required
+              />
+            </div>
+
+            <div class="last-name">
+              <label for="ln" class="formitem">Last Name</label>
+              <input
+                id="ln"
+                placeholder="Last Name"
+                name="Last-Name"
+                class="inputbox"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="email-class">
+            <label for="mailclas" class="formitem">Email</label>
+            <input
+              class="inputbox"
+              placeholder="xyz@gmail.com"
+              id="mailclas"
+              name="Email"
+              type="email"
+              required
+            />
+          </div>
+
+          <div class="message">
+            <label for="mesa" class="formitem">Feedback</label>
+            <input id="mesa" placeholder="Your comments" class="inputbox" />
+          </div>
+
+          <div>
+            <input type="submit" class="submit-button" />
+            <input type="reset" class="submit-button" />
+          </div>
+        </form>
+
+        <div class="feedimage"></div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footerSection">
+      <button class="title" onclick="location.href='login.html'">
+        Đăng nhập để có trải nghiệm tốt hơn
+      </button>
+
+      <div class="additional-info">
+        <div class="row">
+          <div class="box_item">
+            <div class="item">
+              <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+              Một số website xem phim miễn phí
+            </div>
+            <div class="item">
+              <a href="https://phimmoichill.com/" class="nav-link text-primary"
+                >Phimmoichill</a
+              >
+            </div>
+          </div>
+          <div class="item">
+            <a href="https://motphimtv.to/" class="nav-link text-primary"
+              >Motphimtv</a
+            >
+          </div>
+        </div>
+        <div class="box_item1">
+          <div class="item1">
+            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+            Chính sách quyền riêng tư
+          </div>
+          <div class="item1">
+            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+            Điều khoản sử dụng
+          </div>
+          <div class="item1">
+            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+            Khiếu nại bản quyền
+          </div>
+        </div>
+        <div class="logo-section">
+          <a
+            href="https://www.tiktok.com/@sickmahduk"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/kophaitun/"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.twitter.com" target="_blank" class="icon-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@quoctuan5496"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/thatisculua"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <p>&copy; 2024 HNXG. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#"><div class="topicon"></div></a>
+
+    <!-- Footer Section -->
+
+    <a href="#">
+      <div class="topicon"></div>
+    </a>
+  </body>
+</html>
