@@ -5,6 +5,10 @@ PUT     http://localhost:3000/films/actorId/6713cb78ba2b05818e6e09b5
 ###
 PUT     http://localhost:3000/films/typeId/6713cc515a4274a3a13f24f3
 ###
+GET     http://localhost:3000/films/sort/by-rate
+Content-Type:  application/json
+
+###
 GET    http://localhost:3000/actors
 
 ###
