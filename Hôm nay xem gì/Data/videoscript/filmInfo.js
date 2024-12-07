@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const user = JSON.parse(localStorage.getItem('userInf'));
+  console.log('🚀 ~ user:', user);
   if (!user) {
     document.getElementById(
       'usermenu',
@@ -7,11 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
           Đăng nhập
         </a>`;
   } else {
-    console.log('user');
     document.getElementById('usermenu').innerHTML = `
         <div class="dropdown">
         <button  class="me-5 bg-transparent border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <image src="./Data/logo/avatar.png" style="width:40px">
+          <image src="${
+            user.avatar
+              ? 'http://localhost:3000/uploads/' + user.avatar
+              : './Data/logo/avatar.png'
+          }" style="width:40px">
           </image>
           </button>
       <ul class="dropdown-menu">
@@ -20,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
           ? `<li>
             <a class="dropdown-item" href="./cretaeMovie.html">
               Tạo Phim
+            </a>
+            <a class="dropdown-item" href="./listUser.html">
+              Danh sách người dùng
             </a>
           </li>`
           : ''
@@ -50,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         filmRennder += `<div class="card  mb-3 position-relative " style="background:black">
           ${
-            user.role == 'admin'
+            user?.role == 'admin'
               ? `<a
                 class="position-absolute end-0"
                 href="./updateFilm.html?id=${filmId}"
@@ -80,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         filmRennder += `</p>
         <div class="p-4" id="rate_avagere">
-        Trung Binh : ${(res.rateCount / res.ratePeopleCount).toFixed(2)}
+        Trung Binh : ${res.star}
         </div>
         <div class="p-4" id="rate_avagere">
         Đạo diễn : ${res.actor ? res.actor : 'Unknown'}
@@ -110,44 +117,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
         $('.fa-star').each(function () {
           $(this).on('click', function () {
-            let currentRate = parseInt($(this).attr('data-id'));
-            $('.fa-star').removeClass('text-warning');
-            $('.fa-star').each(function (index) {
-              if (index < currentRate) {
-                $(this).addClass('text-warning');
-              }
-            });
-
-            fetch(`http://localhost:3000/films/rating`, {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                filmId: filmID,
-                rating: currentRate,
-              }),
-            })
-              .then((response) => {
-                if (!response.ok) {
-                  throw new Error(
-                    'Network response was not ok ' + response.statusText,
-                  );
+            if (user) {
+              let currentRate = parseInt($(this).attr('data-id'));
+              $('.fa-star').removeClass('text-warning');
+              $('.fa-star').each(function (index) {
+                if (index < currentRate) {
+                  $(this).addClass('text-warning');
                 }
-                Toastify({
-                  text: 'Bạn đã đánh giá thành công.',
-                  className: 'info',
-                  style: {
-                    background: 'linear-gradient(to right, #00b09b, #96c93d)',
-                  },
-                }).showToast();
-              })
-              .catch((error) => {
-                console.error(
-                  'There was a problem with the edit operation:',
-                  error,
-                );
               });
+
+              fetch(`http://localhost:3000/films/rating`, {
+                method: 'PUT',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  filmId: filmID,
+                  rating: currentRate,
+                }),
+              })
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error(
+                      'Network response was not ok ' + response.statusText,
+                    );
+                  }
+                  Toastify({
+                    text: 'Bạn đã đánh giá thành công.',
+                    className: 'info',
+                    style: {
+                      background: 'linear-gradient(to right, #00b09b, #96c93d)',
+                    },
+                  }).showToast();
+                })
+                .catch((error) => {
+                  console.error(
+                    'There was a problem with the edit operation:',
+                    error,
+                  );
+                });
+            } else {
+              Toastify({
+                text: 'Bạn cần đăng nhập để đánh giá.',
+                className: 'error',
+                style: {
+                  background: 'linear-gradient(to right, #dc3545, #f8312f)',
+                },
+              }).showToast();
+            }
           });
         });
       })
@@ -647,8 +664,8 @@ document.addEventListener('DOMContentLoaded', function () {
     height="64px"
     class="mr-3"
      src=${
-       result?.userId?.avatar
-         ? 'http://localhost:3000/uploads/' + result?.userId?.avatar
+       user?.avatar
+         ? 'http://localhost:3000/uploads/' + user.avatar
          : './Data/logo/useravt.jpg'
      }
     alt="User image"

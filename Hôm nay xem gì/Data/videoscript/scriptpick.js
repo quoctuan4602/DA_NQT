@@ -10,8 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('usermenu').innerHTML = `
         <div class="dropdown">
         <button class=" bg-transparent border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <image src="./Data/logo/avatar.png" style="width:40px">
-          </image>
+         <image src="${
+           user.avatar
+             ? 'http://localhost:3000/uploads/' + user.avatar
+             : './Data/logo/avatar.png'
+         }" style="width:40px">
           </button>
       <ul class="dropdown-menu">
         ${
@@ -19,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
             ? `<li>
             <a class="dropdown-item" href="./cretaeMovie.html">
               Tạo Phim
+            </a>
+             <a class="dropdown-item" href="./listUser.html">
+              Danh sách người dùng
             </a>
           </li>`
             : ''

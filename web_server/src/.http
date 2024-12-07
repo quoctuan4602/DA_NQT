@@ -1,4 +1,6 @@
 ##
+GET http://localhost:3000/users/getAll
+###
 GET    http://localhost:3000/films
 ###
 PUT     http://localhost:3000/films/actorId/6713cb78ba2b05818e6e09b5
